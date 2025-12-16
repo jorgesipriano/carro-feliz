@@ -1,42 +1,51 @@
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import carSuv from "@/assets/car-suv.jpg";
-import carSedan from "@/assets/car-sedan.jpg";
-import carCoupe from "@/assets/car-coupe.jpg";
-
-const vehicles = [
-  {
-    id: 1,
-    name: "SUV Premium",
-    brand: "Elite X7",
-    year: 2024,
-    price: "R$ 289.900",
-    km: "0 km",
-    image: carSuv,
-    tag: "Novo",
-  },
-  {
-    id: 2,
-    name: "Sedan Esportivo",
-    brand: "Elite S8",
-    year: 2024,
-    price: "R$ 349.900",
-    km: "0 km",
-    image: carSedan,
-    tag: "Destaque",
-  },
-  {
-    id: 3,
-    name: "Roadster",
-    brand: "Elite Z4",
-    year: 2023,
-    price: "R$ 259.900",
-    km: "12.500 km",
-    image: carCoupe,
-    tag: "Seminovo",
-  },
-];
+import { supabase } from "@/integrations/supabase/client";
+import type { Vehicle } from "@/types/vehicle";
 
 export function Vehicles() {
+  const [vehicles, setVehicles] = useState<Vehicle[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchVehicles() {
+      const { data, error } = await supabase
+        .from("vehicles")
+        .select("*")
+        .order("created_at", { ascending: false })
+        .limit(6);
+
+      if (error) {
+        console.error("Erro ao buscar veículos:", error.message);
+      } else {
+        setVehicles(data || []);
+      }
+      setLoading(false);
+    }
+
+    fetchVehicles();
+  }, []);
+
+  if (loading) {
+    return (
+      <section className="py-24 px-4">
+        <div className="container mx-auto max-w-6xl text-center">
+          <p className="text-muted-foreground">Carregando veículos...</p>
+        </div>
+      </section>
+    );
+  }
+
+  if (vehicles.length === 0) {
+    return (
+      <section className="py-24 px-4">
+        <div className="container mx-auto max-w-6xl text-center">
+          <p className="text-muted-foreground">Nenhum veículo encontrado.</p>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="py-24 px-4">
       <div className="container mx-auto max-w-6xl">
@@ -59,10 +68,9 @@ export function Vehicles() {
               className="group bg-card rounded-2xl overflow-hidden border border-border hover:border-gold/50 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Image container */}
               <div className="relative h-56 overflow-hidden">
                 <img
-                  src={vehicle.image}
+                  src={vehicle.image_url}
                   alt={vehicle.name}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
@@ -71,7 +79,6 @@ export function Vehicles() {
                 </span>
               </div>
 
-              {/* Content */}
               <div className="p-6">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-sm text-muted-foreground">
@@ -82,7 +89,7 @@ export function Vehicles() {
                   </span>
                 </div>
                 <h3 className="text-xl font-bold mb-4">{vehicle.name}</h3>
-                
+
                 <div className="flex items-center justify-between mb-5">
                   <span className="text-sm text-muted-foreground">
                     {vehicle.km}
