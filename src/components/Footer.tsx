@@ -1,4 +1,4 @@
-import { Car } from "lucide-react";
+import logo from "@/assets/logo-kings-garage.jpeg";
 
 export function Footer() {
   return (
@@ -6,10 +6,11 @@ export function Footer() {
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-gold flex items-center justify-center">
-              <Car className="w-5 h-5 text-primary-foreground" />
+            <img src={logo} alt="King's Garage" className="w-12 h-12 rounded-xl object-contain" />
+            <div>
+              <span className="text-xl font-bold block">King's Garage</span>
+              <span className="text-xs text-muted-foreground">Venda • Troca • Financia</span>
             </div>
-            <span className="text-xl font-bold">King's Garage</span>
           </div>
 
           <div className="flex items-center gap-8 text-sm text-muted-foreground">
@@ -27,8 +28,9 @@ export function Footer() {
             </a>
           </div>
 
-          <p className="text-sm text-muted-foreground">
-            © 2024 King's Garage - Belo Horizonte. Todos os direitos reservados.
+          <p className="text-sm text-muted-foreground text-center md:text-right">
+            R. Wanderley Teixeira Matos, 49 - Trevo, BH<br />
+            © 2024 King's Garage. Todos os direitos reservados.
           </p>
         </div>
       </div>
