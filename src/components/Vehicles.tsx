@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import type { Vehicle } from "@/types/vehicle";
+import heroCar from "@/assets/hero-car.jpg";
 
 export function Vehicles() {
   const [vehicles, setVehicles] = useState<Vehicle[]>([]);
@@ -71,9 +72,15 @@ export function Vehicles() {
             >
               <div className="relative h-56 overflow-hidden">
                 <img
-                  src={vehicle.image_url}
+                  src={vehicle.image_url || heroCar}
                   alt={vehicle.name}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    if (target.src !== heroCar) {
+                      target.src = heroCar;
+                    }
+                  }}
                 />
                 <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-gold text-primary-foreground text-xs font-bold">
                   {vehicle.tag}
