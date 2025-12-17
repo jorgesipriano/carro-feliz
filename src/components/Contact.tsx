@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin } from "lucide-react";
 
 export function Contact() {
   return (
-    <section className="py-24 px-4 relative overflow-hidden">
+    <section id="contato" className="py-16 md:py-24 px-4 relative overflow-hidden scroll-mt-20">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/20 to-background" />
       
