@@ -52,15 +52,20 @@ export function Contact() {
                 </div>
               </a>
               
-              <div className="flex items-center gap-4">
+              <a 
+                href="https://maps.google.com/?q=Rua+Wanderley+Teixeira+Matos+49+Trevo+Belo+Horizonte+MG"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 hover:opacity-80 transition-opacity"
+              >
                 <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center">
                   <MapPin className="w-5 h-5 text-gold" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Endereço</p>
-                  <p className="font-semibold">Belo Horizonte, MG</p>
+                  <p className="font-semibold">R. Wanderley Teixeira Matos, 49 - Trevo, BH</p>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
 

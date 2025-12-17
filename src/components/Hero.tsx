@@ -1,15 +1,13 @@
 import { Button } from "@/components/ui/button";
-import { Car } from "lucide-react";
 import heroCar from "@/assets/hero-car.jpg";
+import logo from "@/assets/logo-kings-garage.jpeg";
 
 export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
       <div className="container mx-auto max-w-7xl px-4 py-4 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-gold flex items-center justify-center">
-            <Car className="w-5 h-5 text-primary-foreground" />
-          </div>
+          <img src={logo} alt="King's Garage" className="w-12 h-12 rounded-xl object-contain" />
           <span className="text-xl font-bold">King's Garage</span>
         </div>
 
@@ -57,7 +55,7 @@ export function Hero() {
         <div className="max-w-2xl">
           <div className="animate-fade-up">
             <span className="inline-block px-4 py-2 rounded-full bg-gold/10 text-gold text-sm font-medium mb-6">
-              Concessionária Premium em Belo Horizonte
+              Venda • Troca • Financia | Seminovos e Car Hunter
             </span>
           </div>
           
@@ -74,8 +72,7 @@ export function Hero() {
             className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed max-w-xl animate-fade-up"
             style={{ animationDelay: "0.2s" }}
           >
-            Descubra nossa seleção exclusiva de veículos premium. 
-            Qualidade, confiança e as melhores condições do mercado.
+            Uma loja com propósito. Encontre o veículo dos seus sonhos com as melhores condições de venda, troca e financiamento.
           </p>
           
           <div 
