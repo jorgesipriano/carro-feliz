@@ -24,25 +24,33 @@ export function Contact() {
             </p>
 
             <div className="space-y-6">
-              <div className="flex items-center gap-4">
+              <a 
+                href="https://wa.me/5531981180034" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 hover:opacity-80 transition-opacity"
+              >
                 <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center">
                   <Phone className="w-5 h-5 text-gold" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Telefone</p>
-                  <p className="font-semibold">(11) 99999-9999</p>
+                  <p className="text-sm text-muted-foreground">WhatsApp</p>
+                  <p className="font-semibold">(31) 98118-0034</p>
                 </div>
-              </div>
+              </a>
               
-              <div className="flex items-center gap-4">
+              <a 
+                href="mailto:contato@kingsgarage.com.br"
+                className="flex items-center gap-4 hover:opacity-80 transition-opacity"
+              >
                 <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center">
                   <Mail className="w-5 h-5 text-gold" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">E-mail</p>
-                  <p className="font-semibold">contato@eliteautos.com.br</p>
+                  <p className="font-semibold">contato@kingsgarage.com.br</p>
                 </div>
-              </div>
+              </a>
               
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center">
@@ -50,7 +58,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Endereço</p>
-                  <p className="font-semibold">Av. Paulista, 1000 - São Paulo, SP</p>
+                  <p className="font-semibold">Belo Horizonte, MG</p>
                 </div>
               </div>
             </div>
@@ -90,8 +98,10 @@ export function Contact() {
                   placeholder="Qual modelo você procura?"
                 />
               </div>
-              <Button variant="gold" size="lg" className="w-full mt-2">
-                Enviar Mensagem
+              <Button variant="gold" size="lg" className="w-full mt-2" asChild>
+                <a href="https://wa.me/5531981180034?text=Olá! Gostaria de solicitar uma proposta." target="_blank" rel="noopener noreferrer">
+                  Enviar via WhatsApp
+                </a>
               </Button>
             </form>
           </div>

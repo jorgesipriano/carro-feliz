@@ -28,8 +28,10 @@ export function Header() {
           </a>
         </nav>
 
-        <Button variant="gold" size="sm">
-          Fale Conosco
+        <Button variant="gold" size="sm" asChild>
+          <a href="https://wa.me/5531981180034" target="_blank" rel="noopener noreferrer">
+            Fale Conosco
+          </a>
         </Button>
       </div>
     </header>
@@ -80,11 +82,13 @@ export function Hero() {
             className="flex flex-wrap gap-4 animate-fade-up"
             style={{ animationDelay: "0.3s" }}
           >
-            <Button variant="gold" size="lg">
-              Ver Estoque
+            <Button variant="gold" size="lg" asChild>
+              <a href="#estoque">Ver Estoque</a>
             </Button>
-            <Button variant="goldOutline" size="lg">
-              Agendar Visita
+            <Button variant="goldOutline" size="lg" asChild>
+              <a href="https://wa.me/5531981180034?text=Olá! Gostaria de agendar uma visita na King's Garage." target="_blank" rel="noopener noreferrer">
+                Agendar Visita
+              </a>
             </Button>
           </div>
 
