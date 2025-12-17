@@ -58,7 +58,7 @@ export function Vehicles() {
               Veículos em Destaque
             </h2>
           </div>
-          <Button variant="goldOutline">Ver Todo o Estoque</Button>
+          <Button variant="goldOutline" onClick={() => window.open("https://wa.me/553198118034", "_blank")}>Ver Todo o Estoque</Button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -98,8 +98,12 @@ export function Vehicles() {
 
                 <div className="flex items-center justify-between pt-5 border-t border-border">
                   <p className="text-2xl font-bold text-gold">{vehicle.price}</p>
-                  <Button variant="outline" size="sm">
-                    Detalhes
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => window.open(`https://wa.me/553198118034?text=Olá, tenho interesse no veículo: ${vehicle.name}`, "_blank")}
+                  >
+                    Tenho Interesse
                   </Button>
                 </div>
               </div>

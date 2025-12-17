@@ -50,7 +50,7 @@ export function Header() {
           variant="gold"
           size="sm"
           className="hidden md:flex"
-          onClick={() => window.open("https://wa.me/5531981180034", "_blank")}
+          onClick={() => window.open("https://wa.me/553198118034", "_blank")}
         >
           Fale Conosco
         </Button>
@@ -81,7 +81,7 @@ export function Header() {
             <Button
               variant="gold"
               className="mt-2"
-              onClick={() => window.open("https://wa.me/5531981180034", "_blank")}
+              onClick={() => window.open("https://wa.me/553198118034", "_blank")}
             >
               Fale Conosco
             </Button>
@@ -114,8 +114,8 @@ export function Hero() {
               Venda • Troca • Financia | Seminovos e Car Hunter
             </span>
           </div>
-          
-          <h1 
+
+          <h1
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 md:mb-6 animate-fade-up"
             style={{ animationDelay: "0.1s" }}
           >
@@ -123,38 +123,38 @@ export function Hero() {
             <br />
             <span className="text-gradient-gold">Está Aqui</span>
           </h1>
-          
-          <p 
+
+          <p
             className="text-base md:text-lg lg:text-xl text-muted-foreground mb-6 md:mb-10 leading-relaxed max-w-xl animate-fade-up"
             style={{ animationDelay: "0.2s" }}
           >
             Uma loja com propósito. Encontre o veículo dos seus sonhos com as melhores condições de venda, troca e financiamento.
           </p>
-          
-          <div 
+
+          <div
             className="flex flex-col sm:flex-row gap-3 md:gap-4 animate-fade-up"
             style={{ animationDelay: "0.3s" }}
           >
-            <Button 
-              variant="gold" 
+            <Button
+              variant="gold"
               size="lg"
               className="text-sm md:text-base"
               onClick={() => scrollToSection("estoque")}
             >
               Ver Estoque
             </Button>
-            <Button 
-              variant="goldOutline" 
+            <Button
+              variant="goldOutline"
               size="lg"
               className="text-sm md:text-base"
-              onClick={() => window.open("https://wa.me/5531981180034?text=Olá! Gostaria de agendar uma visita na King's Garage.", "_blank")}
+              onClick={() => window.open("https://wa.me/553198118034?text=Olá, gostaria de agendar uma visita.", "_blank")}
             >
               Agendar Visita
             </Button>
           </div>
 
           {/* Stats - Mobile optimized */}
-          <div 
+          <div
             className="flex flex-wrap gap-6 md:gap-10 mt-8 md:mt-14 animate-fade-up"
             style={{ animationDelay: "0.4s" }}
           >
