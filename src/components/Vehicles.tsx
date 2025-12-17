@@ -18,6 +18,7 @@ export function Vehicles() {
       if (error) {
         console.error("Erro ao buscar veículos:", error.message);
       } else {
+        console.log("Veículos carregados:", data);
         setVehicles(data || []);
       }
       setLoading(false);
